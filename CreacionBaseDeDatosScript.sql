@@ -5,7 +5,7 @@ USE CasaTequileraBarrilito;
 CREATE TABLE Usuario
 
 	(
-		IdUsuario INT PRIMARY KEY NOT NULL,
+		IdUsuario INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
 		Nombre NVARCHAR(50) NOT NULL,
 		Nombre_Corto NVARCHAR(50) NOT NULL,
 		Contrasenia BINARY(16) NOT NULL,
@@ -15,14 +15,14 @@ CREATE TABLE Usuario
 
 CREATE TABLE Seccion
 	(
-		IdSeccion INT PRIMARY KEY NOT NULL,
+		IdSeccion INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
 		Nombre NVARCHAR (50) NOT NULL, 
 		
 	);
 
 CREATE TABLE Rol
 	(
-		IdRol INT PRIMARY KEY NOT NULL,
+		IdRol INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
 		IdUsuario INT NOT NULL, 
 		CONSTRAINT IdUsuario Foreign Key (idUsuario)
 		REFERENCES Usuario (IdUsuario),
